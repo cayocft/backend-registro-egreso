@@ -15,7 +15,7 @@ const crearUsuario = async (req,res) => {
         return 
     }
 }
-const obtenerUSuarios = async (req,res)=>{
+const obtenerUsuarios = async (req,res)=>{
     try{
         let respuesta_obtener = await obtenerUsuariosDB()
         res.status(200).json({
@@ -29,5 +29,5 @@ const obtenerUSuarios = async (req,res)=>{
 
 module.exports = {
     crearUsuario,
-    obtenerUSuarios
+    obtenerUsuarios
 }

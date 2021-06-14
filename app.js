@@ -12,10 +12,12 @@ app.use(bodyParser.urlencoded({extended:false}))
 const usuario = require('./router/usuario')
 const inicio = require('./router/login')
 const registroForm = require('./router/registroForm')
+const egreso = require('./router/egreso')
 
 api.use('/usuario',usuario)
 api.use('/inicio',inicio)
 api.use('/registroForm',registroForm)
+api.use('/egreso', egreso)
 
 app.use(process.env.PREFIJO, api)
 /** CONEXION MONGO */
