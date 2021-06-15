@@ -6,6 +6,12 @@
 
 ### 3- Obtener Usuario
 
+### 4- Crear Egreso
+
+### 5- Obtener Egreso
+
+### 6- Obtener Egreso por Usuario
+
 ## ___________________________________________________________
 
 ## 1- Servidor
@@ -70,4 +76,89 @@
                 "password": "$2b$10$H2OhlpDOBnK3GoR9Vfcqeu4qbuX8q6iE0okT3H91MZhE2sNglNSC.",
                 "__v": 0
             }
+    }
+
+## 4-Crear Egreso
+
+### Ruta
+
+    Método POST /egreso/crear-egreso    
+
+### Datos Recibidos
+
+    descripcion:String,
+    precio: Number,
+    id_usuario: {
+        type: Schema.ObjectId,
+        ref: 'Usuario',
+        default: null
+    }
+
+### Respuesta
+
+    {
+        "egreso": {
+            "id_usuario": "60c18078e752d41a04eea451",
+            "_id": "60c8085aef26d600151770cf",
+            "descripcion": "cft",
+            "precio": 1009,
+            "__v": 0
+        }
+    }
+
+## 4-Obtener Egreso
+
+### Ruta
+
+    /egreso/obtener-egresos
+
+### Datos Obtenidos
+
+    {
+    "egresos": [
+        {
+            "id_usuario": {
+                "rut": "11111-1",
+                "_id": "60c18078e752d41a04eea451",
+                "nombre": "mauro",
+                "apellido": "bloque",
+                "correo": "correo@gmail.com",
+                "password": "$2b$10$BiPTE4bi0H4iUCsnvbsqbO4TZRJTwhz.tVwQvbJn0gfmCjTVKIVWG",
+                "__v": 0
+            },
+            "_id": "60c8085aef26d600151770cf",
+            "descripcion": "cft",
+            "precio": 1009,
+            "__v": 0
+        },
+        {}...
+    }
+
+## 6- Obtener Egreso por Usuario
+
+### Ruta
+
+    egreso/obtener-egresos-usuario/:id
+    Ejemplo ruta: egreso/obtener-egresos-usuario/60aee75a3230560015e8c085
+
+### Datos Obtenidos
+
+    {
+        "egresos_usuario": [
+            {
+                "id_usuario": {
+                    "rut": "111111",
+                    "_id": "60aee75a3230560015e8c085",
+                    "nombre": "edgar",
+                    "apellido": "cay",
+                    "correo": "edgardo@gmail.com",
+                    "password": "$2b$10$zaSg/SaBEym22Nk8Yw/Pfug7dlL/qu8JGiQs//5EWcWZyZNx5X25C",
+                    "__v": 0
+                },
+                "_id": "60c6f4a8edc5912b280b2e23",
+                "descripcion": "neuva noche",
+                "precio": 5001,
+                "__v": 0
+            },
+            {}...
     }
