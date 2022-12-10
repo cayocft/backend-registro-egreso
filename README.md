@@ -18,6 +18,7 @@
 
     servidor: https://api-egresos.edgardocayo.cl/
     Prefijo: api-egresos
+    Prefijo alternativo: /api-backend-prueba
 
 ### NOTA
 ```
